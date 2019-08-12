@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/lblHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prime Factors Generator"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.099" />
+
+    <TextView
+        android:id="@+id/lblWholeNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="396dp"
+        android:text="Enter Whole Number List :"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lblHeading"
+        app:layout_constraintVertical_bias="0.703" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="handleButtonClick"
+        android:text="Generate"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lblWholeNumber"
+        app:layout_constraintVertical_bias="0.328" />
+
+    <EditText
+        android:id="@+id/editNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Use commas to separate"
+        android:inputType="text"
+        android:singleLine="false"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lblWholeNumber"
+        app:layout_constraintVertical_bias="0.149" />
+
+    <TextView
+        android:id="@+id/lblPrimeFactors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
+        android:text="Prime Factors :"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editNumber"
+        app:layout_constraintVertical_bias="0.812" />
+
+
+    <EditText
+        android:id="@+id/editResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="textMultiLine"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lblPrimeFactors"
+        app:layout_constraintVertical_bias="0.298" />
+
+</android.support.constraint.ConstraintLayout>
