@@ -1,6 +1,7 @@
 package com.example.consumer;
 
 import android.content.Intent;
+import android.os.TransactionTooLargeException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -57,9 +58,24 @@ public class MainActivity extends AppCompatActivity {
         String inputNumList = editBox.getText().toString();
         Log.d(TAG,"Input_Number : " + inputNumList);
 
-        //Send input number list to the producer
-        serviceStarter.putExtra("NUMBER",inputNumList);
-        this.startActivity(serviceStarter);
-        finish();
+        try
+        {
+            //Send input number list to the producer
+            serviceStarter.putExtra("NUMBER",inputNumList);
+            this.startActivity(serviceStarter);
+            finish();
+        }
+        catch (Exception e)
+        {
+            //Handle the exception if the input is too large to send through intent
+            if (e.getCause() instanceof TransactionTooLargeException)
+            {
+                String InputStringTooLargeException = "Your input is too large";
+                TextView textView = findViewById(R.id.editResult);
+                textView.setText(InputStringTooLargeException);
+            }
+        }
+
+
     }
 }
